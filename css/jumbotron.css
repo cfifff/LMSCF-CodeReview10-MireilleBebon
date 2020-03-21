@@ -9,3 +9,9 @@ body{
 .checked {
   color: orange;
 }
+.row1 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	background: orangered;
+}

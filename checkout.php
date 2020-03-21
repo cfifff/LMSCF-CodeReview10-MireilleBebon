@@ -28,8 +28,7 @@
 			    foreach($_SESSION['cart'] as $isbn => $qty){
 					$conn = db_connect();
 					$book = mysqli_fetch_assoc(getBookByIsbn($conn, $isbn));
-					$dvd = mysqli_fetch_assoc(getDvdByIsbn($conn, $isbn));
-					$cd = mysqli_fetch_assoc(getCdkByIsbn($conn, $isbn));
+					
 			?>
 		<tr>
 			<td><?php echo $book['book_title'] . " by " . $book['book_author']; ?></td>
@@ -37,16 +36,7 @@
 			<td><?php echo $qty; ?></td>
 			<td><?php echo "$" . $qty * $book['book_price']; ?></td>
 
-			<td><?php echo $cd['cd_album'] . " by " . $cd['releasedate']; ?></td>
-			<td><?php echo "$" . $cd['cd_price']; ?></td>
-			<td><?php echo $qty; ?></td>
-			<td><?php echo "$" . $qty * $cd['cd_price']; ?></td>
-
-			<td><?php echo $dvd['dvd_title'] . " by " . $dvd['releasedate']; ?></td>
-			<td><?php echo "$" . $dvd['dvd_price']; ?></td>
-			<td><?php echo $qty; ?></td>
-			<td><?php echo "$" . $qty * $dvd['dvd_price']; ?></td>
-
+			
 		</tr>
 		<?php } ?>
 		<tr>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2020 at 09:41 AM
+-- Generation Time: Mar 21, 2020 at 10:37 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -108,13 +108,36 @@ INSERT INTO `cd` (`ID`, `cd_isbn`, `cd_album`, `releasedate`, `cd_image`, `cd_de
 
 CREATE TABLE `customers` (
   `ID` int(11) NOT NULL,
-  `customerid` int(10) UNSIGNED NOT NULL,
   `name` varchar(60) COLLATE latin1_general_ci NOT NULL,
   `address` varchar(80) COLLATE latin1_general_ci NOT NULL,
   `city` varchar(30) COLLATE latin1_general_ci NOT NULL,
   `zip_code` varchar(10) COLLATE latin1_general_ci NOT NULL,
   `country` varchar(60) COLLATE latin1_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+--
+-- Dumping data for table `customers`
+--
+
+INSERT INTO `customers` (`ID`, `name`, `address`, `city`, `zip_code`, `country`) VALUES
+(2, ' Buzzy', '176 Saint Viateur West Street', 'montreal', ' QC 2L3', 'canada'),
+(3, ' Tetsuya', ' 529 Kent St', 'Sydney', ' NSW 2000', 'Australia'),
+(4, ' Merah Putih', 'Jl. Petitenget No.100X', ' Bali ', '80361', ' Indonesia'),
+(7, 'Elite French restaurant', '155 W 51st St', ' New York', 'NY 10019', 'United States'),
+(9, ' The Modern', ' 9 W 53rd St', 'New York', ' NY 10019', 'United States');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customers_items`
+--
+
+CREATE TABLE `customers_items` (
+  `id` int(11) NOT NULL,
+  `customers(ID)` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `status` enum('Added to cart','Confirmed') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -169,6 +192,41 @@ INSERT INTO `genre` (`ID`, `GenreType`) VALUES
 (10, 'Hiphop/Rap'),
 (11, 'French Pop'),
 (12, 'R&B');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `items`
+--
+
+CREATE TABLE `items` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `price` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `items`
+--
+
+INSERT INTO `items` (`id`, `name`, `price`) VALUES
+(1, 'The Subtle Art of Not Giving a F*ck', 20),
+(2, 'You are a bad ass', 20),
+(3, 'The Magic of Thinking Big', 20),
+(4, 'Make Your Bed', 20),
+(5, 'Great stories for children', 11),
+(6, 'BUSTER THE DOG AND FRIENDS IN THE GREAT BALL CHASE', 14),
+(7, 'The sneaky spinach', 20),
+(8, 'Girl Detective Books 1-8', 13),
+(9, 'Mental Health Matters', 17),
+(10, 'The Monster Health Book', 6),
+(11, 'Changing Minds: The go-to Guide to Mental Health for Family and Friends', 13),
+(12, 'Starboy', 28),
+(13, 'Lemonade', 26),
+(14, 'Whitney Houston - The Greatest Hits', 7),
+(15, 'Star Trek Trilogy: The Kelvin Timeline [4k UHD] [Blu-ray]', 40),
+(16, '1917', 23),
+(17, 'Man of Steel (Blu-ray)', 7);
 
 -- --------------------------------------------------------
 
@@ -249,6 +307,12 @@ ALTER TABLE `customers`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `customers_items`
+--
+ALTER TABLE `customers_items`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `dvd`
 --
 ALTER TABLE `dvd`
@@ -288,6 +352,12 @@ ALTER TABLE `publisher`
 --
 ALTER TABLE `cd`
   ADD CONSTRAINT `cd_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `publisher` (`ID`);
+
+--
+-- Constraints for table `customers_items`
+--
+ALTER TABLE `customers_items`
+  ADD CONSTRAINT `customers_items_ibfk_1` FOREIGN KEY (`id`) REFERENCES `customers` (`ID`);
 
 --
 -- Constraints for table `dvd`

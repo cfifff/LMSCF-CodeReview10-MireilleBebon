@@ -13,6 +13,25 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./css/jumbotron.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+      .container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .jumbotron {
+        text-align: center;
+      }
+      .row, .row1, .row2 {
+        display: block;
+        border-bottom: 2px solid lightgrey;
+        padding-bottom: 70px;
+        padding-top: 50px;
+      }
+      #lead {
+      font-size: 30px;
+      }
+    </style>
   </head>
 
   <body>
@@ -55,7 +74,7 @@
     <div class="jumbotron">
       <div class="container">
         <h1>EXPLORE NEW ADVENTURE WITHOUT LEAVING THE HOUSE</h1>
-        <p class="lead">THE BEST BOOKSTORE ONLINE</p>
+        <p id="lead">No need to hunt around, we have all in one place.</p>
         <p>
 Over 6 million books ready for shipment within 24 hours and 3.6 million eBooks to download now.</p>
       </div>
