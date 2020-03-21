@@ -54,9 +54,10 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Welcome to online CSE bookstore</h1>
-        <p class="lead">This site has been made using PHP with MYSQL (procedure functions)!</p>
-        <p>The layout use Bootstrap to make it more responsive. It's just a simple web!</p>
+        <h1>EXPLORE NEW ADVENTURE WITHOUT LEAVING THE HOUSE</h1>
+        <p class="lead">THE BEST BOOKSTORE ONLINE</p>
+        <p>
+Over 6 million books ready for shipment within 24 hours and 3.6 million eBooks to download now.</p>
       </div>
     </div>
     <?php } ?>
