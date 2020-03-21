@@ -37,9 +37,9 @@
               <!-- link to books.php -->
               <li><a href="books.php"><span class="glyphicon glyphicon-book"></span>&nbsp; Books</a></li>
               <!--link to dvd.php-->
-              <li><a href="dvd.php"><span class="glyphicon glyphicon-book"></span>&nbsp; Movies/TV</a></li>
+              <li><a href="dvds.php"><span class="glyphicon glyphicon-book"></span>&nbsp; Movies/TV</a></li>
               <!--link to cd.php-->
-              <li><a href="cd.php"><span class="glyphicon glyphicon-book"></span>&nbsp; Music</a></li>
+              <li><a href="cds.php"><span class="glyphicon glyphicon-book"></span>&nbsp; Music</a></li>
               <!-- link to contacts.php -->
               <li><a href="contact.php"><span class="glyphicon glyphicon-phone-alt"></span>&nbsp; Contact</a></li>
               <!-- link to shopping cart -->

@@ -12,7 +12,7 @@
     exit;
   }
 
-  $title = "Full Catalogs of Books";
+  $title = "Full Catalogs of DVD";
   require_once "./template/header.php";
 ?>
   <p class="lead text-center text-muted">Full Catalogs of DVD</p>
