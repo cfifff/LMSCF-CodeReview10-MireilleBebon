@@ -29,7 +29,7 @@
 		if(isset($_FILES['image']) && $_FILES['image']['name'] != ""){
 			$image = $_FILES['image']['name'];
 			$directory_self = str_replace(basename($_SERVER['PHP_SELF']), '', $_SERVER['PHP_SELF']);
-			$uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . $directory_self . "BigLibraryProject/img/";
+			$uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . $directory_self . "./img/";
 			$uploadDirectory .= $image;
 			move_uploaded_file($_FILES['image']['tmp_name'], $uploadDirectory);
 		}
